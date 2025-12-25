@@ -33,6 +33,8 @@ export function CourseSidebar({ selectedStatus, onStatusChange, activityCounts }
   const selectedBg = useColorModeValue('primary.50', 'primary.900');
   const selectedTextColor = useColorModeValue('primary.600', 'primary.300');
   const hoverBg = useColorModeValue('gray.50', 'gray.700');
+  const headerTextColor = useColorModeValue('gray.600', 'gray.400');
+  const selectedBoxBg = useColorModeValue('blue.50', 'blue.900');
 
   const courseStatusOptions: { 
     label: string; 
@@ -74,7 +76,7 @@ export function CourseSidebar({ selectedStatus, onStatusChange, activityCounts }
       flexShrink={0}
     >
       <VStack space={1} p={4}>
-        <Text fontSize="sm" fontWeight="bold" color={useColorModeValue('gray.600', 'gray.400')} mb={2} px={2}>
+        <Text fontSize="sm" fontWeight="bold" color={headerTextColor} mb={2} px={2}>
           COURSES
         </Text>
         <Divider mb={2} />
@@ -90,7 +92,7 @@ export function CourseSidebar({ selectedStatus, onStatusChange, activityCounts }
               _hover={{ bg: hoverBg }}
             >
               <Box
-                bg={isSelected ? useColorModeValue('blue.50', 'blue.900') : 'transparent'}
+                bg={isSelected ? selectedBoxBg : 'transparent'}
                 px={3}
                 py={2.5}
                 borderRadius="md"

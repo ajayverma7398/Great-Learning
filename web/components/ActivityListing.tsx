@@ -49,6 +49,8 @@ export function ActivityListing({
   const bgColor = useColorModeValue('white', 'gray.800');
   const borderColor = useColorModeValue('gray.200', 'gray.700');
   const inputBg = useColorModeValue('white', 'gray.700');
+  const emptyStateTextColor = useColorModeValue('gray.600', 'gray.400');
+  const paginationTextColor = useColorModeValue('gray.600', 'gray.400');
 
   const filteredAndSortedActivities = useMemo(() => {
     let filtered = filterActivities(mockActivities, filters);
@@ -181,7 +183,7 @@ export function ActivityListing({
             borderColor={borderColor}
             alignItems="center"
           >
-            <Text fontSize="lg" color={useColorModeValue('gray.600', 'gray.400')}>
+            <Text fontSize="lg" color={emptyStateTextColor}>
               No activities found matching your filters.
             </Text>
           </Box>
@@ -239,7 +241,7 @@ export function ActivityListing({
                   );
                 } else if (page === currentPage - 2 || page === currentPage + 2) {
                   return (
-                    <Text key={page} color={useColorModeValue('gray.600', 'gray.400')} px={2}>
+                    <Text key={page} color={paginationTextColor} px={2}>
                       ...
                     </Text>
                   );
@@ -262,7 +264,7 @@ export function ActivityListing({
 
           <Text
             fontSize="xs"
-            color={useColorModeValue('gray.600', 'gray.400')}
+            color={paginationTextColor}
             textAlign="center"
             mt={2}
           >

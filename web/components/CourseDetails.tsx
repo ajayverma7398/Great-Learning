@@ -50,6 +50,7 @@ export function CourseDetails({ activity }: CourseDetailsProps) {
   };
 
   const statusColorScheme = getStatusColorScheme(activity.status);
+  const progressBgColor = useColorModeValue(`${statusColorScheme}.100`, `${statusColorScheme}.900`);
 
   const handleBack = () => {
     router.back();
@@ -291,7 +292,7 @@ export function CourseDetails({ activity }: CourseDetailsProps) {
                     colorScheme={statusColorScheme}
                     size="lg"
                     borderRadius="full"
-                    bg={useColorModeValue(`${statusColorScheme}.100`, `${statusColorScheme}.900`)}
+                    bg={progressBgColor}
                   />
                 </VStack>
               </>

@@ -23,6 +23,7 @@ export function TopNavBar({ selectedType, onTypeChange }: TopNavBarProps) {
   const borderColor = useColorModeValue('gray.200', 'gray.700');
   const textColor = useColorModeValue('gray.800', 'white');
   const navBgColor = useColorModeValue('white', 'gray.800');
+  const dropdownTextColor = useColorModeValue('gray.500', 'gray.400');
   const [showUserMenu, setShowUserMenu] = useState(false);
 
   const activityTypeOptions: { label: string; value: ActivityType | 'all'; icon: string }[] = [
@@ -107,7 +108,7 @@ export function TopNavBar({ selectedType, onTypeChange }: TopNavBarProps) {
                       <Text fontSize="sm" fontWeight="medium" color={textColor} display={{ base: 'none', md: 'flex' }}>
                         John Doe
                       </Text>
-                      <Text fontSize="xs" color={useColorModeValue('gray.500', 'gray.400')}>
+                      <Text fontSize="xs" color={dropdownTextColor}>
                         ▼
                       </Text>
                     </HStack>
