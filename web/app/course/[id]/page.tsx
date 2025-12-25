@@ -11,16 +11,18 @@ export default function CourseDetailPage() {
   const activity = mockActivities.find((a) => a.id === activityId);
 
   const bgColor = useColorModeValue('gray.50', 'gray.900');
+  const errorTextColor = useColorModeValue('gray.600', 'gray.400');
+  const errorSubTextColor = useColorModeValue('gray.500', 'gray.500');
 
   if (!activity) {
     return (
       <Box minH="100vh" bg={bgColor} p={6}>
         <VStack space={4} alignItems="center" justifyContent="center" minH="50vh">
-          <Text fontSize="xl" fontWeight="bold" color={useColorModeValue('gray.600', 'gray.400')}>
+          <Text fontSize="xl" fontWeight="bold" color={errorTextColor}>
             Course not found
           </Text>
-          <Text fontSize="md" color={useColorModeValue('gray.500', 'gray.500')}>
-            The course you're looking for doesn't exist.
+          <Text fontSize="md" color={errorSubTextColor}>
+            The course you&apos;re looking for doesn&apos;t exist.
           </Text>
         </VStack>
       </Box>

@@ -53,6 +53,7 @@ export function ActivityCard({ activity }: ActivityCardProps) {
 
   const statusColorScheme = getStatusColorScheme(activity.status);
   const actionLabel = getActionButtonLabel(activity);
+  const progressBgColor = useColorModeValue(`${statusColorScheme}.100`, `${statusColorScheme}.900`);
 
   const handleCardClick = () => {
     router.push(`/course/${activity.id}`);
@@ -230,7 +231,7 @@ export function ActivityCard({ activity }: ActivityCardProps) {
               colorScheme={statusColorScheme}
               size="md"
               borderRadius="full"
-              bg={useColorModeValue(`${statusColorScheme}.100`, `${statusColorScheme}.900`)}
+              bg={progressBgColor}
             />
           </VStack>
         )}
