@@ -1,0 +1,31 @@
+{
+  "name": "activity-listing-platform",
+  "version": "1.0.0",
+  "description": "Activity Listing Page for Online Learning Platform - Web & Mobile",
+  "private": true,
+  "workspaces": [
+    "web",
+    "mobile",
+    "shared"
+  ],
+  "scripts": {
+    "dev:web": "cd web && npm run dev",
+    "build:web": "cd web && npm run build",
+    "start:web": "cd web && npm run start",
+    "dev:mobile": "cd mobile && npm start",
+    "build:mobile:android": "cd mobile && npm run android",
+    "build:mobile:ios": "cd mobile && npm run ios",
+    "test": "npm run test --workspaces",
+    "lint": "npm run lint --workspaces"
+  },
+  "keywords": [
+    "react",
+    "nextjs",
+    "react-native",
+    "expo",
+    "learning-platform"
+  ],
+  "author": "",
+  "license": "MIT"
+}
+
