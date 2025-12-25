@@ -10,6 +10,10 @@ import {
   useColorModeValue,
   Flex,
   Popover,
+  IconButton,
+  useColorMode,
+  MoonIcon,
+  SunIcon,
 } from 'native-base';
 import { ActivityType } from '@activity-platform/shared';
 import { useState } from 'react';
@@ -20,6 +24,7 @@ interface TopNavBarProps {
 }
 
 export function TopNavBar({ selectedType, onTypeChange }: TopNavBarProps) {
+  const { colorMode, toggleColorMode } = useColorMode();
   const borderColor = useColorModeValue('gray.200', 'gray.700');
   const textColor = useColorModeValue('gray.800', 'white');
   const navBgColor = useColorModeValue('white', 'gray.800');
@@ -52,10 +57,10 @@ export function TopNavBar({ selectedType, onTypeChange }: TopNavBarProps) {
               Great Learning
             </Text>
           </HStack>
-          
-          <HStack 
-            space={2} 
-            alignItems="center" 
+
+          <HStack
+            space={2}
+            alignItems="center"
             position="absolute"
             left="50%"
             style={{ transform: 'translateX(-50%)' }}
@@ -86,6 +91,19 @@ export function TopNavBar({ selectedType, onTypeChange }: TopNavBarProps) {
           </HStack>
 
           <HStack space={3} alignItems="center">
+            <IconButton
+              icon={colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
+              onPress={toggleColorMode}
+              variant="ghost"
+              _icon={{
+                color: textColor,
+                size: 'md',
+              }}
+              _pressed={{
+                bg: useColorModeValue('gray.100', 'gray.700'),
+              }}
+              aria-label="Toggle color mode"
+            />
             <Popover
               isOpen={showUserMenu}
               onClose={() => setShowUserMenu(false)}
